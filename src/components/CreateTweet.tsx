@@ -20,7 +20,6 @@ export const CreateTweet = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("tweet");
 
     try {
       await tweetSchema.parse({ text });
