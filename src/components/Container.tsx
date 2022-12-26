@@ -2,7 +2,7 @@ import type { FC, ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
-  classNames: string;
+  classNames?: string;
 };
 
 export const Container: FC<Props> = ({ children, classNames = "" }) => {

@@ -23,6 +23,16 @@ export const tweetRouter = router({
   getTimeline: publicProcedure
     .input(
       z.object({
+        where: z
+          .object({
+            author: z
+              .object({
+                name: z.string().optional(),
+              })
+              .optional(),
+          })
+          .optional()
+          .optional(),
         cursor: z.string().nullish(),
         limit: z.number().min(1).max(100).default(10),
       })
@@ -54,6 +64,11 @@ export const tweetRouter = router({
               name: true,
               image: true,
               id: true,
+            },
+          },
+          _count: {
+            select: {
+              likes: true,
             },
           },
         },
