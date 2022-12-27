@@ -200,7 +200,6 @@ export const Timeline = ({
       setIsLoading(true);
       new Promise((resolve) => setTimeout(resolve, 3000)).then(() => {
         setIsLoading(false);
-        console.log("called");
         fetchNextPage();
       });
     }
